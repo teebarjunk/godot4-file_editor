@@ -21,6 +21,8 @@
 - [ ] Turn on/off word wrap. 
 - [ ] Bottom console word/line count. 
 - [ ] Toggle bottom console.
+- [ ] Insert templates for file types, ie images for Markdown.
+- [ ] Detect external file changes.
 
 # Window
 - [ ] Toggle file list panel.
