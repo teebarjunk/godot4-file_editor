@@ -1,0 +1,73 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node",
+"class": &"FE_BaseFile",
+"language": &"GDScript",
+"path": "res://addons/file_editor/data/FE_BaseFile.gd"
+}, {
+"base": "FE_BaseFile",
+"class": &"FE_Directory",
+"language": &"GDScript",
+"path": "res://addons/file_editor/data/FE_Directory.gd"
+}, {
+"base": "CodeEdit",
+"class": &"FE_Editor",
+"language": &"GDScript",
+"path": "res://addons/file_editor/ext_editor/FE_Editor.gd"
+}, {
+"base": "Container",
+"class": &"FE_Editors",
+"language": &"GDScript",
+"path": "res://addons/file_editor/comp/FE_Editors.gd"
+}, {
+"base": "FE_BaseFile",
+"class": &"FE_File",
+"language": &"GDScript",
+"path": "res://addons/file_editor/data/FE_File.gd"
+}, {
+"base": "Node",
+"class": &"FE_Files",
+"language": &"GDScript",
+"path": "res://addons/file_editor/comp/FE_Files.gd"
+}, {
+"base": "Node",
+"class": &"FE_Main",
+"language": &"GDScript",
+"path": "res://addons/file_editor/comp/FE_Main.gd"
+}, {
+"base": "PopupMenu",
+"class": &"FE_OptionsMenu",
+"language": &"GDScript",
+"path": "res://addons/file_editor/FE_OptionsMenu.gd"
+}, {
+"base": "Resource",
+"class": &"FE_Util",
+"language": &"GDScript",
+"path": "res://addons/file_editor/FE_Util.gd"
+}]
+_global_script_class_icons={
+"FE_BaseFile": "",
+"FE_Directory": "",
+"FE_Editor": "",
+"FE_Editors": "",
+"FE_File": "",
+"FE_Files": "",
+"FE_Main": "",
+"FE_OptionsMenu": "",
+"FE_Util": ""
+}
+
+[application]
+
+config/name="file_editor"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0", "Vulkan Clustered")
