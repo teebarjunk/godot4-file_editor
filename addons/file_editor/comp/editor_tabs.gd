@@ -4,9 +4,9 @@ extends TabBar
 signal current_changed()
 
 var _tab_parent: Node
-var font := preload("res://fonts/robotomono/robotomono_r.tres")
-var font_i := preload("res://fonts/robotomono/robotomono_i.tres")
-var font_b := preload("res://fonts/robotomono/robotomono_b.tres")
+var font := preload("res://addons/file_editor/fonts/fe_font.tres")
+var font_i := preload("res://addons/file_editor/fonts/fe_font_i.tres")
+var font_b := preload("res://addons/file_editor/fonts/fe_font_b.tres")
 
 func get_current_control() -> Node:
 	return _tab_parent.get_child(current_tab)

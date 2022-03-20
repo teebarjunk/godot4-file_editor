@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2po2hcbr0dwk"]
+[gd_scene load_steps=21 format=3 uid="uid://b2po2hcbr0dwk"]
 
 [ext_resource type="Script" path="res://addons/file_editor/comp/FE_Main.gd" id="1_ye7uv"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/menu_top.gd" id="2_2e6gq"]
@@ -6,13 +6,15 @@
 [ext_resource type="Script" path="res://addons/file_editor/comp/file_dialog.gd" id="2_xi4e3"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/FE_Files.gd" id="2_ynr54"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/file_list.gd" id="3_5namj"]
-[ext_resource type="Font" uid="uid://b4g61a4hgqqak" path="res://fonts/robotomono/robotomono_r.tres" id="4_fmosd"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/chapter_list.gd" id="4_r00tw"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/meta_panel.gd" id="4_td4f3"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/menu_text_input.gd" id="5_xlouk"]
+[ext_resource type="Font" uid="uid://d3fbcmrfhtxef" path="res://addons/file_editor/fonts/fe_font.tres" id="6_g230f"]
 [ext_resource type="Script" path="res://addons/file_editor/FE_OptionsMenu.gd" id="6_gx06r"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/drag_file.gd" id="6_mfpeu"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/FE_Editors.gd" id="8_pt73u"]
+[ext_resource type="Font" uid="uid://dy2fxolj7w2fp" path="res://addons/file_editor/fonts/fe_font_i.tres" id="9_bhqdw"]
+[ext_resource type="Font" uid="uid://172wll6pmlxo" path="res://addons/file_editor/fonts/fe_font_b.tres" id="10_oekq3"]
 [ext_resource type="Script" path="res://addons/file_editor/comp/editor_tabs.gd" id="11_ylho7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gems"]
@@ -59,6 +61,7 @@ show_file_extension = {
 script = ExtResource( "2_ou848" )
 
 [node name="file_dialog" type="FileDialog" parent="."]
+show_hidden_files = true
 script = ExtResource( "2_xi4e3" )
 
 [node name="c" type="VBoxContainer" parent="."]
@@ -110,16 +113,17 @@ popup/item_1/id = 1
 
 [node name="space" type="Control" parent="c/menu_top"]
 offset_left = 130.0
-offset_right = 959.0
+offset_right = 950.0
 offset_bottom = 31.0
 size_flags_horizontal = 3
 
 [node name="version" type="Label" parent="c/menu_top"]
 modulate = Color(1, 1, 1, 0.25)
-offset_left = 963.0
-offset_top = 2.0
+offset_left = 954.0
+offset_top = 4.0
 offset_right = 1004.0
-offset_bottom = 28.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource( "6_g230f" )
 text = "v1.12"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -145,14 +149,14 @@ size_flags_vertical = 3
 split_offset = 120
 
 [node name="c" type="MarginContainer" parent="c/c/c"]
-offset_right = 191.0
+offset_right = 171.0
 offset_bottom = 565.0
 size_flags_vertical = 3
 theme_override_constants/margin_left = 4
 
 [node name="file_list" type="VBoxContainer" parent="c/c/c/c"]
 offset_left = 4.0
-offset_right = 191.0
+offset_right = 171.0
 offset_bottom = 565.0
 script = ExtResource( "3_5namj" )
 _popup = NodePath("popup")
@@ -170,20 +174,23 @@ text = "FOLDERS"
 script = ExtResource( "6_gx06r" )
 
 [node name="filter" type="LineEdit" parent="c/c/c/c/file_list"]
-offset_right = 187.0
-offset_bottom = 31.0
+offset_right = 167.0
+offset_bottom = 28.0
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource( "6_g230f" )
 placeholder_text = "Filter"
 clear_button_enabled = true
 flat = true
 
 [node name="list" type="RichTextLabel" parent="c/c/c/c/file_list"]
-offset_top = 35.0
-offset_right = 187.0
+offset_top = 32.0
+offset_right = 167.0
 offset_bottom = 565.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource( "4_fmosd" )
+theme_override_fonts/italics_font = ExtResource( "9_bhqdw" )
+theme_override_fonts/bold_font = ExtResource( "10_oekq3" )
+theme_override_fonts/normal_font = ExtResource( "6_g230f" )
 theme_override_font_sizes/mono_font_size = 14
 theme_override_font_sizes/bold_italics_font_size = 14
 theme_override_font_sizes/italics_font_size = 14
@@ -210,7 +217,7 @@ text = "file"
 fit_content_height = true
 
 [node name="c2" type="HSplitContainer" parent="c/c/c"]
-offset_left = 203.0
+offset_left = 183.0
 offset_right = 1024.0
 offset_bottom = 565.0
 size_flags_horizontal = 3
@@ -218,7 +225,7 @@ size_flags_vertical = 3
 split_offset = 200
 
 [node name="c" type="VBoxContainer" parent="c/c/c/c2"]
-offset_right = 604.0
+offset_right = 614.0
 offset_bottom = 565.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -246,7 +253,7 @@ offset_bottom = 31.0
 size_flags_horizontal = 3
 
 [node name="editors" type="VBoxContainer" parent="c/c/c/c2/c"]
-offset_right = 604.0
+offset_right = 614.0
 offset_bottom = 565.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -255,9 +262,11 @@ script = ExtResource( "8_pt73u" )
 _meta_panel = NodePath("editor_meta")
 _error_label = NodePath("editor_meta/errors")
 _meta_label = NodePath("editor_meta/meta")
+word_wrap = false
+font_size = 16
 
 [node name="tab_bar" type="TabBar" parent="c/c/c/c2/c/editors"]
-offset_right = 604.0
+offset_right = 614.0
 theme = SubResource( "Theme_42bqx" )
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 0)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 0)
@@ -271,8 +280,8 @@ drag_to_rearrange_enabled = true
 script = ExtResource( "11_ylho7" )
 
 [node name="editor_parent" type="MarginContainer" parent="c/c/c/c2/c/editors"]
-offset_right = 604.0
-offset_bottom = 542.0
+offset_right = 614.0
+offset_bottom = 545.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_right = 0
@@ -281,45 +290,51 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="editor_meta" type="HBoxContainer" parent="c/c/c/c2/c/editors"]
-offset_top = 542.0
-offset_right = 604.0
+offset_top = 545.0
+offset_right = 614.0
 offset_bottom = 565.0
 
 [node name="errors" type="RichTextLabel" parent="c/c/c/c2/c/editors/editor_meta"]
-offset_right = 300.0
-offset_bottom = 23.0
+offset_right = 305.0
+offset_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/italics_font = ExtResource( "9_bhqdw" )
+theme_override_fonts/bold_font = ExtResource( "10_oekq3" )
+theme_override_fonts/normal_font = ExtResource( "6_g230f" )
 bbcode_enabled = true
 text = "ERR: 0"
 fit_content_height = true
 
 [node name="meta" type="RichTextLabel" parent="c/c/c/c2/c/editors/editor_meta"]
-offset_left = 304.0
-offset_right = 604.0
-offset_bottom = 23.0
+offset_left = 309.0
+offset_right = 614.0
+offset_bottom = 20.0
 size_flags_horizontal = 3
+theme_override_fonts/italics_font = ExtResource( "9_bhqdw" )
+theme_override_fonts/bold_font = ExtResource( "10_oekq3" )
+theme_override_fonts/normal_font = ExtResource( "6_g230f" )
 bbcode_enabled = true
 text = "1:0"
 fit_content_height = true
 
 [node name="c3" type="VSplitContainer" parent="c/c/c/c2"]
-offset_left = 616.0
-offset_right = 821.0
+offset_left = 626.0
+offset_right = 841.0
 offset_bottom = 565.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
 [node name="MarginContainer" type="MarginContainer" parent="c/c/c/c2/c3"]
-offset_right = 205.0
+offset_right = 215.0
 offset_bottom = 272.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_right = 4
 
 [node name="chapter_list" type="VBoxContainer" parent="c/c/c/c2/c3/MarginContainer"]
-offset_right = 201.0
+offset_right = 211.0
 offset_bottom = 272.0
 size_flags_vertical = 3
 script = ExtResource( "4_r00tw" )
@@ -341,18 +356,21 @@ item_0/id = 0
 script = ExtResource( "6_gx06r" )
 
 [node name="filter" type="LineEdit" parent="c/c/c/c2/c3/MarginContainer/chapter_list"]
-offset_right = 201.0
-offset_bottom = 31.0
+offset_right = 211.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource( "6_g230f" )
 placeholder_text = "Filter"
 clear_button_enabled = true
 flat = true
 
 [node name="list" type="RichTextLabel" parent="c/c/c/c2/c3/MarginContainer/chapter_list"]
-offset_top = 35.0
-offset_right = 201.0
+offset_top = 32.0
+offset_right = 211.0
 offset_bottom = 272.0
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource( "4_fmosd" )
+theme_override_fonts/italics_font = ExtResource( "9_bhqdw" )
+theme_override_fonts/bold_font = ExtResource( "10_oekq3" )
+theme_override_fonts/normal_font = ExtResource( "6_g230f" )
 theme_override_font_sizes/mono_font_size = 14
 theme_override_font_sizes/bold_italics_font_size = 14
 theme_override_font_sizes/italics_font_size = 14
@@ -365,13 +383,13 @@ autowrap_mode = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="c/c/c/c2/c3"]
 offset_top = 292.0
-offset_right = 205.0
+offset_right = 215.0
 offset_bottom = 565.0
 size_flags_vertical = 3
 theme_override_constants/margin_right = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="c/c/c/c2/c3/MarginContainer2"]
-offset_right = 201.0
+offset_right = 211.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 
@@ -383,9 +401,12 @@ offset_bottom = 26.0
 text = "GLOBAL TAGS"
 
 [node name="tags_list" type="RichTextLabel" parent="c/c/c/c2/c3/MarginContainer2/VBoxContainer"]
-offset_right = 201.0
+offset_right = 211.0
 offset_bottom = 273.0
 size_flags_vertical = 3
+theme_override_fonts/italics_font = ExtResource( "9_bhqdw" )
+theme_override_fonts/bold_font = ExtResource( "10_oekq3" )
+theme_override_fonts/normal_font = ExtResource( "6_g230f" )
 text = "*none*"
 
 [node name="meta_panels" type="TabContainer" parent="c/c"]

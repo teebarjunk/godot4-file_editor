@@ -76,7 +76,7 @@ func _ready_deferred():
 	_init_settings()
 	_update_title()
 	clear_undo_history()
-	add_theme_font_override("font", preload("res://fonts/robotomono/robotomono_r.tres"))
+	add_theme_font_override("font", preload("res://addons/file_editor/fonts/fe_font.tres"))
 	add_theme_font_size_override("font_size", 14)
 	update_settings()
 	
